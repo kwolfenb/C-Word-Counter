@@ -23,7 +23,8 @@ _Kenny Wolfenberger - kennywolfenberger@gmail.com_
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
 | Create instance of WordSentence class |new WordSentence instance | Type of new instance == type of WordSentence  |
-| WordSentence class can hold and return the 2 strings | "coffee", "I like coffee" |  "coffee", "I like coffee." |
+| WordSentence class can hold and return a word string | "coffee" |  "coffee" |
+| WordSentence class can hold and return sentence string | "I like coffee" |  "I like coffee." |
 | User can input a word and a sentence | "new", "string from user" | "new", "string from user"  |
 | Program can identify when the word is also in the sentence | "coffee", "I like coffee" | true  |
 | Program can identify when the word is not in the sentence | "new", "string from user" | false  |

@@ -1,9 +1,22 @@
+using System;
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
   public class WordSentence
   {
+    private string _wordInput;
+    // private string _sentenceInput;
+    
+    public WordSentence(string userWord)
+    {
+      _wordInput = userWord;
+    }
 
-    // properties, methods, etc. will go here.
+    public string GetWord()
+    {
+      return _wordInput;
+    }
 
   }
 }
