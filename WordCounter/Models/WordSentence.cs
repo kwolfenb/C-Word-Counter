@@ -33,24 +33,32 @@ namespace WordCounter.Models
     {
       _sentenceInput = setSentenceInput;
     }
+  }
+  
+  public class RepeatCounter
+  {
+    private string _wordToCount;
+    private string _sentenceToCheck;
+    private int _wordCount;
 
-
-    public bool WordInSentence()
+    public RepeatCounter(string wordToCount, string sentenceToCheck)
     {
-      int wordCounter = 0;
-      string[] sentenceArray = _sentenceInput.Split(' ');
+      _wordToCount = wordToCount;
+      _sentenceToCheck = sentenceToCheck;
+    }
+
+    public int WordInSentence()
+    {
+      _wordCount = 0;
+      string[] sentenceArray = _sentenceToCheck.Split(' ');
       foreach(string x in sentenceArray)
       {
-        if(x == _wordInput) 
+        if(x == _wordToCount) 
         {
-          wordCounter ++;
+          _wordCount ++;
         }
       } 
-      if (wordCounter > 0)
-      {
-        return true;
-      } 
-      else return false;
+      return _wordCount;
     }
   }
 }

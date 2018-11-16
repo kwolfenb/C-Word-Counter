@@ -58,34 +58,58 @@ namespace WordCounter.Tests
       Assert.AreEqual(newSentence, result);
     }
 
+  }
+
+  [TestClass]
+  public class RepeatCounterTests
+  {
+
     [TestMethod]
-    public void WordInSentence_WordNotInSentence_False()
+    public void WordInSentence_WordNotInSentence_0()
     {
       //Arrange
-      string wordInput = "tea";
-      string sentenceInput = "I like coffee";
-      WordSentence newWordSentence = new WordSentence(wordInput, sentenceInput);
-
+      WordSentence newWordSentence = new WordSentence("tea", "I like coffee");
+      string wordInput = newWordSentence.GetWord();
+      string sentenceInput = newWordSentence.GetSentence();
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordInput, sentenceInput);
       //Act
-      bool result = newWordSentence.WordInSentence();
+      int result = newRepeatCounter.WordInSentence();
 
       //Assert
-      Assert.AreEqual(false, result);
+      Assert.AreEqual(0, result);
     }
 
     [TestMethod]
-    public void WordInSentence_WordInSentence_True()
+    public void WordInSentence_WordInSentence_1()
     {
       //Arrange
-      string wordInput = "coffee";
-      string sentenceInput = "I like coffee";
-      WordSentence newWordSentence = new WordSentence(wordInput, sentenceInput);
+      WordSentence newWordSentence = new WordSentence("coffee", "I like coffee");
+      string wordInput = newWordSentence.GetWord();
+      string sentenceInput = newWordSentence.GetSentence();
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordInput, sentenceInput);
 
       //Act
-      bool result = newWordSentence.WordInSentence();
+      int result = newRepeatCounter.WordInSentence();
 
       //Assert
-      Assert.AreEqual(true, result);
+      Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void WordInSentence_CountWordsInSentence_Int()
+    {
+      //Arrange
+      WordSentence newWordSentence = new WordSentence("car", "My car is faster than your car");
+      string wordInput = newWordSentence.GetWord();
+      string sentenceInput = newWordSentence.GetSentence();
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordInput, sentenceInput);
+
+      //Act
+      int result = newRepeatCounter.WordInSentence();
+
+      //Assert
+      Assert.AreEqual(2, result);
+    }
+
   }
 }
