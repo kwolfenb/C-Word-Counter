@@ -111,5 +111,21 @@ namespace WordCounter.Tests
       Assert.AreEqual(2, result);
     }
 
+    [TestMethod]
+    public void WordInSentence_CountsWordsByPunctuation_Int()
+    {
+      //Arrange
+      WordSentence newWordSentence = new WordSentence("hungry", "Are you 'hungr?");
+      string wordInput = newWordSentence.GetWord();
+      string sentenceInput = newWordSentence.GetSentence();
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordInput, sentenceInput);
+
+      //Act
+      int result = newRepeatCounter.WordInSentence();
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
+
   }
 }
