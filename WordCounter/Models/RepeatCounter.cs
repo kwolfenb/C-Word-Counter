@@ -12,8 +12,8 @@ namespace WordCounter.Models
 
     public RepeatCounter(string wordToCount, string sentenceToCheck)
     {
-      _wordToCount = wordToCount;
-      _sentenceToCheck = sentenceToCheck;
+      _wordToCount = wordToCount.ToLower();
+      _sentenceToCheck = sentenceToCheck.ToLower();
     }
 
     public int WordInSentence()
