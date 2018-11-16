@@ -57,6 +57,35 @@ namespace WordCounter.Tests
       string result = newWordSentence.GetSentence();
       Assert.AreEqual(newSentence, result);
     }
-  }
 
+    [TestMethod]
+    public void WordInSentence_WordNotInSentence_False()
+    {
+      //Arrange
+      string wordInput = "tea";
+      string sentenceInput = "I like coffee";
+      WordSentence newWordSentence = new WordSentence(wordInput, sentenceInput);
+
+      //Act
+      bool result = newWordSentence.WordInSentence();
+
+      //Assert
+      Assert.AreEqual(false, result);
+    }
+
+    [TestMethod]
+    public void WordInSentence_WordInSentence_True()
+    {
+      //Arrange
+      string wordInput = "coffee";
+      string sentenceInput = "I like coffee";
+      WordSentence newWordSentence = new WordSentence(wordInput, sentenceInput);
+
+      //Act
+      bool result = newWordSentence.WordInSentence();
+
+      //Assert
+      Assert.AreEqual(true, result);
+    }
+  }
 }

@@ -24,11 +24,11 @@ _Kenny Wolfenberger - kennywolfenberger@gmail.com_
 | :-------------     | :------------- | :------------- |
 | Create instance of WordSentence class |new WordSentence instance | Type of new instance == type of WordSentence  |
 | WordSentence class can hold and return a word string | "coffee" |  "coffee" |
-| WordSentence class can hold and return sentence string | "I like coffee" |  "I like coffee." |
+| WordSentence class can hold and return sentence string | "I like coffee." |  "I like coffee." |
 | User can set a word | "car" | "car" |
 | User can set a sentence | "My car is a fast car." | "My car is a fast car." |
+| Program can identify when the word is not in the sentence | "tea", "I like coffee." | false  |
 | Program can identify when the word is also in the sentence | "coffee", "I like coffee" | true  |
-| Program can identify when the word is not in the sentence | "new", "string from user" | false  |
 | Program counts the number of times the word is in the sentence | "coffee", "I like coffee" | 1  |
 
 ## Technologies Used

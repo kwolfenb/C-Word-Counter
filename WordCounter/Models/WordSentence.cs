@@ -34,5 +34,23 @@ namespace WordCounter.Models
       _sentenceInput = setSentenceInput;
     }
 
+
+    public bool WordInSentence()
+    {
+      int wordCounter = 0;
+      string[] sentenceArray = _sentenceInput.Split(' ');
+      foreach(string x in sentenceArray)
+      {
+        if(x == _wordInput) 
+        {
+          wordCounter ++;
+        }
+      } 
+      if (wordCounter > 0)
+      {
+        return true;
+      } 
+      else return false;
+    }
   }
 }
