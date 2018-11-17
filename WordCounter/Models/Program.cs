@@ -21,11 +21,6 @@ namespace WordCounter.Models
         {
         Console.WriteLine("What is the word you would like me to count?");
         string userResponseWord = Console.ReadLine();
-        while(userResponseWord.Contains(' ') || userResponseWord == "")
-        {
-          Console.WriteLine("Please try again. Only one word with no spaces!");
-          userResponseWord = Console.ReadLine();
-        }
         Console.WriteLine("Please enter a sentence and I will count the instances of your word.");
         string userResponseSentence = Console.ReadLine();
         newWordSentence.SetWord(userResponseWord);
@@ -58,11 +53,6 @@ namespace WordCounter.Models
         {
         Console.WriteLine("What is the word you would like me to count?");
         string userResponseWord = Console.ReadLine();
-        while(userResponseWord.Contains(' ') || userResponseWord == "")
-        {
-          Console.WriteLine("Please try again. Only one word with no spaces!");
-          userResponseWord = Console.ReadLine();
-        }
         Console.WriteLine("Please enter a sentence and I will count the instances of your word.");
         string userResponseSentence = Console.ReadLine();
         newWordSentence.SetWord(userResponseWord);
@@ -73,11 +63,6 @@ namespace WordCounter.Models
         {
           Console.WriteLine("Okay, what would you like your new word to be?");
           string newUserResponseWord = Console.ReadLine();
-          while(newUserResponseWord.Contains(' ') || newUserResponseWord == "")
-          {
-            Console.WriteLine("Please try again. Only one word with no spaces!");
-            newUserResponseWord = Console.ReadLine();
-          }
           newWordSentence.SetWord(newUserResponseWord);
           Body();
         } 
