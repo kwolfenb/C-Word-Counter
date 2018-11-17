@@ -5,82 +5,104 @@ namespace WordCounter.Models
 {
   public class Program
   {
+    static WordSentence newWordSentence = new WordSentence("", "");
+
     public static void Main()
     {
-      // Intro
-      Console.WriteLine("Hi. I am WASAP -- Word And Sentence Analyzing Program.");
-      Console.WriteLine("I run a Word Counter program. Would you like to try the Word Counter now? (y/n)");
-      string userResponse1 = Console.ReadLine();
-      if (userResponse1 == "y" || userResponse1 =="Y")
-      {
+// Intro
+        Console.WriteLine("Hi. I am WASAP -- Word And Sentence Analyzing Program.");
+        Console.WriteLine("I run a Word Counter program. Would you like to try the Word Counter now? (y/n)");
+        string userResponse1 = Console.ReadLine();
+        if (userResponse1 == "n" || userResponse1 =="N")
+        {
+          Ending();
+        }
+        if (userResponse1 == "y" || userResponse1 =="Y")
+        {
+        Console.WriteLine("What is the word you would like me to count?");
+        string userResponseWord = Console.ReadLine();
+        while(userResponseWord.Contains(' ') || userResponseWord == "")
+        {
+          Console.WriteLine("Please try again. Only one word with no spaces!");
+          userResponseWord = Console.ReadLine();
+        }
+        Console.WriteLine("Please enter a sentence and I will count the instances of your word.");
+        string userResponseSentence = Console.ReadLine();
+        newWordSentence.SetWord(userResponseWord);
+        newWordSentence.SetSentence(userResponseSentence);
         Body();
       }
-
-      else if (userResponse1 =="n" || userResponse1 == "N")
+      else
       {
-        Ending();
+        Console.WriteLine("Sorry, I couldn't understand that.");
+        Main();
       }
-
     }
-
+//Main 
     public static void Body()
     {
-      // User Input
-      Console.WriteLine("What is the word you would like me to count?");
-      string userResponseWord = Console.ReadLine();
-      Console.WriteLine("Please enter a sentence and I will count the instances of your word.");
-      string userResponseSentence = Console.ReadLine();
-
-      WordSentence newWordSentence = new WordSentence(userResponseWord, userResponseSentence);
       string wordInput = newWordSentence.GetWord();
       string sentenceInput = newWordSentence.GetSentence();
-
       Console.WriteLine("Great! Let me calculate how many times your word \"" + wordInput + "\" appears in your sentence: \"" + sentenceInput + "\".");
-
       RepeatCounter newRepeatCounter = new RepeatCounter(wordInput, sentenceInput);
       int resultCount = newRepeatCounter.WordInSentence();
-
       Console.WriteLine("The answer is " + resultCount +"." );
-      Console.WriteLine("Shall we try again? (y/n)");
+      Console.WriteLine("Would you like to try again? (y/n)");
       string userResponse2 = Console.ReadLine();
 
-      if (userResponse2 == "n" || userResponse2 =="N")
+      if (userResponse2 == "y" || userResponse2 =="Y")
       {
-        Ending();
-      }
-      else if (userResponse2 == "y" || userResponse2 =="Y")
-      {
-        Console.WriteLine("Would you like to change your word, your sentence, or simply start over? (word/sentence/startover)");
+        Console.WriteLine("Would you like to change your word, your sentence, or start over? (word/sentence/startover)");
         string userResponse3 = Console.ReadLine();
         if (userResponse3 == "startover" || userResponse3 == "Startover" || userResponse3 == "start over" )
         {
-          Body();
+        Console.WriteLine("What is the word you would like me to count?");
+        string userResponseWord = Console.ReadLine();
+        while(userResponseWord.Contains(' ') || userResponseWord == "")
+        {
+          Console.WriteLine("Please try again. Only one word with no spaces!");
+          userResponseWord = Console.ReadLine();
+        }
+        Console.WriteLine("Please enter a sentence and I will count the instances of your word.");
+        string userResponseSentence = Console.ReadLine();
+        newWordSentence.SetWord(userResponseWord);
+        newWordSentence.SetSentence(userResponseSentence);
+        Body();
         }
         else if (userResponse3 == "word" || userResponse3 == "Word")
         {
-          NewWord();
+          Console.WriteLine("Okay, what would you like your new word to be?");
+          string newUserResponseWord = Console.ReadLine();
+          while(newUserResponseWord.Contains(' ') || newUserResponseWord == "")
+          {
+            Console.WriteLine("Please try again. Only one word with no spaces!");
+            newUserResponseWord = Console.ReadLine();
+          }
+          newWordSentence.SetWord(newUserResponseWord);
+          Body();
         } 
         else if ( userResponse3 == "sentence" || userResponse3 == "Sentence")
         {
-          NewSentence();
+          Console.WriteLine("Okay, what would you like your new sentence to be?");
+          string newUserResonseSentence = Console.ReadLine();  
+          newWordSentence.SetSentence(newUserResonseSentence);
+          Body();      
+        }
+        else 
+        {
+          Console.WriteLine("Sorry, I didn't understand that.");
+          Ending();
         }
       }
-
+      else 
+      {
+        Ending();
+      }
     }
-    public static void NewWord()
-    {
-        Console.WriteLine("Okay. Let's change the word.");
-    }
-
-    public static void NewSentence()
-    {
-        Console.WriteLine("Okay. Let's change the sentence.");
-    }
-
+//Ending
     public static void Ending()
     {
         Console.WriteLine("Thank you for stopping by. WASAP out!");
     }
-    
   }
 }

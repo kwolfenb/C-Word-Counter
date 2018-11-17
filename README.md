@@ -28,7 +28,7 @@ _Kenny Wolfenberger - kennywolfenberger@gmail.com_
 | User can set a word | "car" | "car" |
 | User can set a sentence | "My car is a fast car." | "My car is a fast car." |
 | Program can identify when the word is not in the sentence | "tea", "I like coffee." | 0  |
-| Program can identify when the word is also in the sentence | "coffee", "I like coffee" | 1  |
+| Program can identify when the word is in the sentence | "coffee", "I like coffee" | 1  |
 | Program counts the number of times the word is in the sentence | "car", "My car is faster than your car" | 2  |
 | Program counts words that are next to punctuation marks | "hungry", "Are you hungry?" | 1  |
 | Program does not count words contained in other words | "read", "is everyone ready?" | 0  |
