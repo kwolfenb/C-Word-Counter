@@ -1,0 +1,46 @@
+Specs for Word Counter:
+
+1. Spec: Create instance of WordSentence class
+- Input: New WordSentence instance
+- Output: Type of new instance == type of WordSentence
+- Why this input: Basic test to show that instance can be created and that it is the correct type. 
+
+2. Spec: WordSentence class can hold and return a word string
+- Input: "coffee"
+- Output: "coffee"
+- Why this input: Any simple word will work. Just verifying that the word can be stored in the WordSentence Object. 
+
+3. Spec: WordSentence class can hold and return sentence string
+- Input: "I like coffee"
+- Output: "I like coffee"
+- Why this input: Any simple sentence will do for this test. 
+
+4. Spec: User can set a word
+- Input: "car"
+- Output: "car"
+- Why this input: Any simple word. 
+
+5. Spec: Program can identify when the word is NOT in the sentence
+- Input: "tea", "I like coffee."
+- Output: 0
+- Why this input: Chose these strings because they are simple to remember, no overlapping characters, no special characters, etc.
+
+6. Spec: Program can identify when the word is in the sentence
+- Input: "coffee", "I like coffee
+- Output: 1
+- Why this input: Chose these strings because they are simple to remember, no overlapping characters, no special characters, etc.
+
+7. Spec: Program counts the number of times the word is in the sentence
+- Input: "car", "My car is faster than your car"
+- Output: 2
+- Why this input: Simple sentence with 2 instances of the word in the sentence
+
+8. Spec: Program counts words that are next to punctuation marks
+- Input: "hungry", "Are you hungry?"
+- Output: 1
+- Why this input: This input tests special characters adjacent to the word being searched for. Verify that it still counts toward the wordcount
+
+9. Spec: Program does not count words contained in other words
+- Input: "read", "is everyone ready?"
+- Output: 0
+- Why this input: Simple phrase with one word that contains the string being counted. This should not count toward wordcount 
