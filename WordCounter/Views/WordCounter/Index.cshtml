@@ -14,4 +14,27 @@
 <h3 class="alignCenter">Make sense? Click <a href="/wordcounter/new">HERE </a>to play!</h3>
 
 <h3 class="alignCenter">Click <a href="/">HERE </a> to go back  instead.</h3>
+<hr>
+<h3>Previous Game Results:</h3>
+@if(@Model.Count == 0)
+{
+  <h4><em>Nothing to see here yet. Play a few games and then check back!</em></h4>
+}
+@if(@Model.Count > 0)
+{
+  <ul>
 
+  @foreach(var word in @Model)
+  {
+    <li class="results">
+      Sentence: <span class="input">@word.GetSentence()</span> <br>
+      Word: <span class="input"> @word.GetWord()<br> </span>
+      Times word is in sentence: <span class="input">@word.GetResults()</span><br>
+    </li>
+
+  }
+</ul>
+<form action ="/wordcounter/delete" method ="post">
+  <button id="clear" class ="btn btn-info btn-lg btn-block" type="submit">Clear Game History</button>
+</form>
+}

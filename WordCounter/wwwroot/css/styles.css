@@ -13,4 +13,21 @@ li{
 .alignCenter{
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 50px;
+}
+.results{
+  list-style: none;
+  border: solid black;
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+}
+.input{
+  font-weight: bold;
+  font-style: italic;
+  color: #c10b29;
+}
+#clear{
+  margin-top:50px;
+  margin-bottom: 50px;
 }

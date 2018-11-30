@@ -1,22 +1,22 @@
 @{
   Layout = "_Layout";
 }
-<h2 class="jumbotron">Here are your Word Counter results!</h2>
-
-<h4>Your word is: <em>@Model["wordSentence"].GetWord().</em></h4>
-<h4>Your sentence is: <em>@Model["wordSentence"].GetSentence()</em></h4>
+<h2 class="alignCenter">Here are your Word Counter results!</h2>
+<hr>
+<h4>Your word is: <span class="input">@Model["wordSentence"].GetWord().</span></h4>
+<h4>Your sentence is: <span class="input">@Model["wordSentence"].GetSentence()</span></h4>
 
 @if(@Model["repeatCounter"].WordInSentence() < 1)
 {
-  <h3>Your word does not appear in your sentence at all!</h3>
+  <h3 class="alignCenter">Your word does not appear in your sentence at all!</h3>
 }
 @if(@Model["repeatCounter"].WordInSentence() >= 1)
 {
-  <h3>Your word appears in your sentence @Model["repeatCounter"].WordInSentence() times!</h3>
+  <h3 class="alignCenter">Your word appears in your sentence @Model["repeatCounter"].WordInSentence() times!</h3>
 
 }
 
-<h4><a href="/wordcounter/new">Play again!</a></h4>
-<h4><a href="/wordcounter">Back to the instructions.</a></h4>
-<h4><a href="/">Main Menu.</a></h4>
+<h3><a href="/wordcounter/new">Play again!</a></h3>
+<h3><a href="/wordcounter">Back to Instructions and Game History</a></h3>
+<h3><a href="/">Main Menu</a></h3>
 

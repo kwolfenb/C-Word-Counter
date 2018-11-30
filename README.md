@@ -12,8 +12,9 @@ _A C# application that takes both a word and a sentence from a user. It then che
 
 * _Clone this repository: $ git clone https://github.com/kwolfenb/WordCounter.Solution.git_
 * _To edit the project, open the project in your preferred text editor._
-* _To run the program, first navigate to the location of the WordCounter.cs file then compile and execute: $ cd WordCounter/Models $ mcs WordCounter.cs; mono WordCounter.exe;_
-* _To run the tests, use these commands: $ cd WordCounter.Tests $ dotnet test_
+* _To run the program, first navigate to the location of the WordCounter file then run dotnet restore, dotnet build, and dotnet run._
+* _When program is running open a web browser and go to localhost:5000 to view program._
+* _To run the tests navigate to the WordCounter.Tests folder and use these commands: $ dotnet restore and dotnet test._ 
 
 ## Support and contact details
 
@@ -38,6 +39,9 @@ _Kenny Wolfenberger - kennywolfenberger@gmail.com_
 * _C#_
 * _.NET_
 * _MSTests_
+* _MVC_
+* _Razor_
+* _Mono_
 
 ### License
 

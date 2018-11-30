@@ -11,7 +11,8 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounter")]
     public ActionResult Index()
     {
-      return View();
+      List<WordSentence> wordSentenceList = WordSentence.GetAll();
+      return View(wordSentenceList);
     }
 
     [HttpGet("/wordcounter/new")]
@@ -26,9 +27,17 @@ namespace WordCounter.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       RepeatCounter newRepeatCounter = new RepeatCounter(word, sentence);
       WordSentence newWordSentence = new WordSentence(word, sentence);
+      newWordSentence.AddResult(newRepeatCounter.WordInSentence());
       model.Add("repeatCounter", newRepeatCounter);
       model.Add("wordSentence", newWordSentence);
       return View(model);
+    }
+
+    [HttpPost("/wordcounter/delete")]
+    public ActionResult Destroy()
+    {
+      WordSentence.ClearAll();
+      return View();
     }
 
 
