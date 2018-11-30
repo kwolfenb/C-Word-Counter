@@ -8,8 +8,19 @@ using System;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class HomeControllerTest
+  public class WordCounterControllerTest
   {
     [TestMethod]
-    
+    public void WordCounter_ReturnsCorrectView_True()
+    {
+      //Arrange
+      WordCounterController newWordCounterController = new WordCounterController();
+
+      //Act
+      ActionResult wordCounterView = newWordCounterController.Index();
+
+      //Assert
+      Assert.IsInstanceOfType(wordCounterView, typeof(ViewResult));
+    }
   }
+}
