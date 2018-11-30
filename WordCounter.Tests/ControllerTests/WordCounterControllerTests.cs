@@ -35,5 +35,25 @@ namespace WordCounter.Tests
       //Assert
       Assert.IsInstanceOfType(wordFormView, typeof(ViewResult));
     }
+
+    [TestMethod]
+    public void Show_CreatesTypeDictionary_Dictionary()
+    {
+      //Arrange
+      WordCounterController newResult = new WordCounterController();
+      Dictionary<string, object> newModel = new Dictionary<string, object>();
+      string newWord = "test";
+      string newSentence = "this is a test";
+      RepeatCounter newRepeatCounter = new RepeatCounter(newWord, newSentence);
+      WordSentence newWordSentence = new WordSentence(newWord, newSentence);
+
+      //Act
+      newModel.Add("wordSentence", newWordSentence);
+      newModel.Add("repeatCounter", newRepeatCounter);
+
+      //Assert
+      Assert.IsInstanceOfType(newModel, typeof(Dictionary<string, object>));
+
+    }
   }
 }
