@@ -10,7 +10,7 @@ _A C# application that takes both a word and a sentence from a user. It then che
 
 ## Setup/Installation Requirements
 
-* _Clone this repository: $ git clone https://github.com/kwolfenb/WordCounter.Solution.git_
+* _Clone this repository: $ git clone [https://github.com/kwolfenb/WordCounter.Solution.git]_
 * _To edit the project, open the project in your preferred text editor._
 * _To run the program, first navigate to the location of the WordCounter file then run dotnet restore, dotnet build, and dotnet run._
 * _When program is running open a web browser and go to localhost:5000 to view program._
