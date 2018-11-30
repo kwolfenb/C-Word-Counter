@@ -1,0 +1,19 @@
+<h2>Here are your Word Counter results!</h2>
+
+<h4>Your word is: <em>@Model["wordSentence"].GetWord().</em></h4>
+<h4>Your sentence is: <em>@Model["wordSentence"].GetSentence().</em></h4>
+
+@if(@Model["repeatCounter"].WordInSentence() < 1)
+{
+  <h3>Your word does not appear in your sentence at all!</h3>
+}
+@if(@Model["repeatCounter"].WordInSentence() >= 1)
+{
+  <h3>Your word appears in your sentence @Model["repeatCounter"].WordInSentence() times!</h3>
+
+}
+
+<h5><a href="/wordcounter/new">Play again!</a></h5>
+<h5><a href="/wordcounter">Back to the instructions.</a></h5>
+<h5><a href="/">Main Menu.</a></h5>
+
