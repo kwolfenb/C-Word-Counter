@@ -1,7 +1,10 @@
-<h2>Here are your Word Counter results!</h2>
+@{
+  Layout = "_Layout";
+}
+<h2 class="jumbotron">Here are your Word Counter results!</h2>
 
 <h4>Your word is: <em>@Model["wordSentence"].GetWord().</em></h4>
-<h4>Your sentence is: <em>@Model["wordSentence"].GetSentence().</em></h4>
+<h4>Your sentence is: <em>@Model["wordSentence"].GetSentence()</em></h4>
 
 @if(@Model["repeatCounter"].WordInSentence() < 1)
 {
@@ -13,7 +16,7 @@
 
 }
 
-<h5><a href="/wordcounter/new">Play again!</a></h5>
-<h5><a href="/wordcounter">Back to the instructions.</a></h5>
-<h5><a href="/">Main Menu.</a></h5>
+<h4><a href="/wordcounter/new">Play again!</a></h4>
+<h4><a href="/wordcounter">Back to the instructions.</a></h4>
+<h4><a href="/">Main Menu.</a></h4>
 
