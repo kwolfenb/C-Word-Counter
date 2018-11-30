@@ -35,8 +35,5 @@ namespace WordCounter.Tests
       //Assert
       Assert.IsInstanceOfType(result, typeof(List<WordSentence>));
     }
-
-
-
   }
 }

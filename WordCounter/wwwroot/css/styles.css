@@ -1,20 +1,24 @@
 h1{
   text-align: center;
 }
+
 img{
   height: 200px;
   width: 300px;
   border-radius: 10px;
 }
+
 li{
   margin-top: 10px;
   font-size: 16px;
 }
+
 .alignCenter{
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
 .results{
   list-style: none;
   border: solid black;
@@ -22,12 +26,24 @@ li{
   border-radius: 10px;
   padding: 10px;
 }
+
 .input{
   font-weight: bold;
   font-style: italic;
   color: #c10b29;
 }
+
 #clear{
   margin-top:50px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+}
+
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  background:#2a2b33;
+  padding:6px;
 }

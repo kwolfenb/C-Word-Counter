@@ -33,13 +33,12 @@ namespace WordCounter.Controllers
       return View(model);
     }
 
-    [HttpPost("/wordcounter/delete")]
+    [HttpPost("/wordcounter/clear")]
     public ActionResult Destroy()
     {
       WordSentence.ClearAll();
       return View();
     }
-
-
+    
   }
 }

@@ -57,7 +57,6 @@ namespace WordCounter.Tests
       string result = newWordSentence.GetSentence();
       Assert.AreEqual(newSentence, result);
     }
-
   }
 
   [TestClass]
