@@ -1,6 +1,6 @@
 # _Word Counter Project_
 
-#### _Independent Project for C# week 1, 11.16.2018_
+#### _Independent Project for C# week 1 and 2, 11.30.2018_
 
 #### By _**Kenny Wolfenberger**_
 
