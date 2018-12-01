@@ -36,7 +36,7 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(wordFormView, typeof(ViewResult));
     }
 
-    [TestMethod]
+    [TestMethod] //Tests Dictionary type in Post method
     public void Show_CreatesTypeDictionary_Dictionary()
     {
       //Arrange
